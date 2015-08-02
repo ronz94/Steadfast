@@ -8,10 +8,10 @@ tmp/
 *.swp
 *~.nib
 local.properties
-.settings/
+#.settings/
 .loadpath
 # Eclipse Core
-.project
+#.project
 # External tool builders
 .externalToolBuilders/
 # Locally stored "Eclipse launch configurations"
@@ -19,7 +19,7 @@ local.properties
 # CDT-specific
 .cproject
 # JDT-specific (Eclipse Java Development Tools)
-.classpath
+#.classpath
 # Java annotation processor (APT)
 .factorypath
 # PDT-specific
