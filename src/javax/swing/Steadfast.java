@@ -10,7 +10,7 @@ public class Steadfast extends JFrame {
 			// Making sure we have a nice window decorations
 			setDefaultLookAndFeelDecorated(true);
 			//creating and setting up windows
-			setTitle("Hi swing !!");
+			setTitle("SteadFast");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			// Adding label with the text to be displayed.
 			JLabel label =  new JLabel("GUI window created !!");
