@@ -2,7 +2,7 @@ import java.awt.FlowLayout;		//For defining the layout
 import java.io.*;				// input-output operations
 import java.net.HttpURLConnection;	// making a connection
 import java.net.URL;			// in making a URL object
-import javax.swing.JFrame;		//s in making Swing Frame
+import javax.swing.JFrame;		// in making Swing Frame
 import javax.swing.JProgressBar;	// in implementing Progress Bar
 
 public class Steadfast extends JFrame {
