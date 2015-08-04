@@ -15,9 +15,11 @@ public class Steadfast extends JFrame {
 
 	public static final void main(String[] args) throws Exception {
 		setDefaultLookAndFeelDecorated(true);
+		
 		String website = "https://github.com/ronz94/Steadfast/archive/basicgui.zip";
 		String itemname = "basicgui.zip";
 		JFrame dhanja = new JFrame();
+		dhanja.setTitle("SteadFast");
 		JProgressBar candybar = new JProgressBar(0,100);
 		candybar.setSize(50,50);
 		candybar.setValue(0); //setting inital candybar value to zero
