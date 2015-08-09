@@ -76,7 +76,6 @@ public class Steadfast extends JFrame {
 		    button.setActionCommand("enable");
 		    button.setEnabled(false);
 		 
-		    
 		    pauseButton.setMnemonic(KeyEvent.VK_S);
 		    pauseButton.setActionCommand("disable");
 		    pauseButton.setEnabled(true);
