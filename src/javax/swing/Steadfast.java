@@ -71,6 +71,33 @@ public class Steadfast extends JFrame {
 		dhanja.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		
+		//setting actions to buttons
+		 button.setMnemonic(KeyEvent.VK_S);
+		    button.setActionCommand("enable");
+		    button.setEnabled(false);
+		 
+		    
+		    pauseButton.setMnemonic(KeyEvent.VK_S);
+		    pauseButton.setActionCommand("disable");
+		    pauseButton.setEnabled(true);
+		    
+		  int actionPerformed (ActionEvent e) 
+		  {
+		  
+		        if ("disable".equals(e.getActionCommand())) {
+		          
+		            pauseButton.setEnabled(false);
+		            button.setEnabled(true);
+		        } else {
+		           
+		           pauseButton.setEnabled(true);
+		           button.setEnabled(false);
+		        }
+		        
+		    }
+		  
+		
+		
 		
 		        
 		// now throwing exception
