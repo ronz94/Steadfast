@@ -10,7 +10,7 @@ import java.net.URL;			// in making a URL object
 import java.awt.event.*;
 
 
-public class Steadfast extends JFrame {
+public class Steadfast extends JFrame implements ActionListener{
 	
 
 	/**
@@ -36,8 +36,6 @@ public class Steadfast extends JFrame {
 	
 	public static final void main(String[] args) throws Exception {
 		setDefaultLookAndFeelDecorated(true);
-		
-		
 		String website = "https://github.com/ronz94/Steadfast/archive/basicgui.zip";
 		String itemname = "basicgui.zip";
 		JFrame dhanja = new JFrame();
@@ -126,13 +124,11 @@ public class Steadfast extends JFrame {
 		}
 	}
 
-	class ButtonListener implements ActionListener {
-		public void actionPerformed(ActionEvent ae){
+	public void actionPerformed(ActionEvent ae){
 		//	button.setEnabled(false);
 		//	cancelButton.setEnabled(true);
 		//	pauseButton.setEnabled(true);
 		//	startButton.setEnabled(true);
 		//	i=0;
 		}
-	}
 }
