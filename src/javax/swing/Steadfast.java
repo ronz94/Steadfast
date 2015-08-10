@@ -59,9 +59,11 @@ public class Steadfast extends JFrame {
 		startButton.setEnabled(true);
 		
 		//setting buttons to the frame
-		dhanja.add(cancelButton);
+		dhanja.add(startButton);
 		dhanja.add(pauseButton);
-        dhanja.add(startButton);		
+		dhanja.add(cancelButton);
+		
+        		
 		
 		
 		// setting progress bar to the frame
