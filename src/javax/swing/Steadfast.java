@@ -72,7 +72,7 @@ public class Steadfast extends JFrame {
 		
 		
 		//setting actions to buttons
-		 button.setMnemonic(KeyEvent.VK_S);
+/*		 button.setMnemonic(KeyEvent.VK_S);
 		    button.setActionCommand("enable");
 		    button.setEnabled(false);
 		 
@@ -95,7 +95,7 @@ public class Steadfast extends JFrame {
 		        
 		    }
 		  
-		
+	*/	
 		
 		
 		        
@@ -125,11 +125,11 @@ public class Steadfast extends JFrame {
 
 	class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent ae){
-			button.setEnabled(false);
-			cancelButton.setEnabled(true);
-			pauseButton.setEnabled(true);
-			startButton.setEnabled(true);
-			i=0;
+		//	button.setEnabled(false);
+		//	cancelButton.setEnabled(true);
+		//	pauseButton.setEnabled(true);
+		//	startButton.setEnabled(true);
+		//	i=0;
 		}
 	}
 }
