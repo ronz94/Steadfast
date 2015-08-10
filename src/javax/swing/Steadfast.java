@@ -54,9 +54,9 @@ public class Steadfast extends JFrame {
 		cancelButton = new JButton ("Cancel");
 		pauseButton = new JButton("Pause");
 		startButton = new JButton ("Resume");
-		cancelButton.setEnabled(false);
-		pauseButton.setEnabled(false);
-		startButton.setEnabled(false);
+		cancelButton.setEnabled(true);
+		pauseButton.setEnabled(true);
+		startButton.setEnabled(true);
 		
 		//setting buttons to the frame
 		dhanja.add(cancelButton);
