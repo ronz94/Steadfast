@@ -41,7 +41,7 @@ public class Steadfast extends JFrame {
 		String website = "https://github.com/ronz94/Steadfast/archive/basicgui.zip";
 		String itemname = "basicgui.zip";
 		JFrame dhanja = new JFrame();
-		dhanja.setSize(400,70);
+		dhanja.setSize(400,100);
 		dhanja.setTitle("SteadFast Downloader");
 		JProgressBar candybar = new JProgressBar(0,100);
 		candybar.setSize(70,70);
