@@ -49,11 +49,11 @@ public class Steadfast extends JFrame {
 		candybar.setStringPainted(true);
 		
 		//setting the buttons
-		button = new JButton("Start");
+		//button = new JButton("Start");
 		//button.addActionListener(new ButtonListener());
 		cancelButton = new JButton ("Cancel");
 		pauseButton = new JButton("Pause");
-		startButton = new JButton ("Resume");
+		startButton = new JButton ("Start");
 		cancelButton.setEnabled(true);
 		pauseButton.setEnabled(true);
 		startButton.setEnabled(true);
