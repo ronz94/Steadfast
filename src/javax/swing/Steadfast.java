@@ -30,7 +30,7 @@ public class Steadfast extends JFrame implements ActionListener{
 
 	
 	
-	public Steadfast(){
+	public Steadfast() throws Exception {
 		setDefaultLookAndFeelDecorated(true);
 		String website = "https://github.com/ronz94/Steadfast/archive/basicgui.zip";
 		String itemname = "basicgui.zip";
