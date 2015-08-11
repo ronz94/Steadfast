@@ -23,7 +23,7 @@ public class Steadfast extends JFrame implements ActionListener{
 	static JButton cancelButton;
 	static JButton pauseButton;
 	static JButton startButton;
-	
+	static JProgressBar candybar;
 	
 	
 	private static final long serialVersionUID = 1L;
