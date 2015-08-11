@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import java.io.*;				// input-output operations
 import java.net.HttpURLConnection;	// making a connection
 import java.net.URL;			// in making a URL object
-
 import java.awt.event.*;
 
 
@@ -21,7 +20,6 @@ public class Steadfast extends JFrame implements ActionListener{
 	JLabel label;
 	JProgressBar pb;
 	
-	static JButton button;
 	static JButton cancelButton;
 	static JButton pauseButton;
 	static JButton startButton;
