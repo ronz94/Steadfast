@@ -30,9 +30,7 @@ public class Steadfast extends JFrame implements ActionListener{
 
 	
 	
-	
-	
-	public static final void main(String[] args) throws Exception {
+	public Steadfast(){
 		setDefaultLookAndFeelDecorated(true);
 		String website = "https://github.com/ronz94/Steadfast/archive/basicgui.zip";
 		String itemname = "basicgui.zip";
@@ -120,6 +118,10 @@ public class Steadfast extends JFrame implements ActionListener{
 		}catch (Exception e){
 			javax.swing.JOptionPane.showConfirmDialog((java.awt.Component)null,e.getMessage(), "Download Error",javax.swing.JOptionPane.DEFAULT_OPTION);
 		}
+	}
+	
+	public static final void main(String[] args) throws Exception {
+		new Steadfast();
 	}
 
 	public void actionPerformed(ActionEvent ae){
