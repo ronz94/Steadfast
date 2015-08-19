@@ -7,6 +7,8 @@ import java.io.*;				// input-output operations
 import java.net.HttpURLConnection;	// making a connection
 import java.net.URL;			// in making a URL object
 
+import javax.activation.CommandInfo;
+
 import java.awt.event.*;
 
 
@@ -38,11 +40,11 @@ public class Steadfast extends JFrame {
 		setDefaultLookAndFeelDecorated(true);
 		
 		
-		String website = "https://github.com/ronz94/Steadfast/archive/basicgui.zip";
-		String itemname = "basicgui.zip";
+		final String website = "https://github.com/ronz94/Steadfast/archive/basicgui.zip";
+		final String itemname = "basicgui.zip";
 		JFrame dhanja = new JFrame();
 		dhanja.setTitle("SteadFast Downloader");
-		JProgressBar candybar = new JProgressBar(0,100);
+		final JProgressBar candybar = new JProgressBar(0,100);
 		candybar.setSize(70,70);
 		candybar.setValue(0); //setting initial candybar value to zero
 		candybar.setStringPainted(true);
@@ -61,7 +63,7 @@ public class Steadfast extends JFrame {
 		dhanja.add(cancelButton);
 		dhanja.add(pauseButton);
         dhanja.add(startButton);		
-		
+		dhanja.add(button);
 		
 		// setting progress bar to the frame
 		dhanja.add(candybar);
@@ -71,65 +73,54 @@ public class Steadfast extends JFrame {
 		dhanja.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		
-		//setting actions to buttons
-		 button.setMnemonic(KeyEvent.VK_S);
-		    button.setActionCommand("enable");
-		    button.setEnabled(false);
-		 
-		    pauseButton.setMnemonic(KeyEvent.VK_S);
-		    pauseButton.setActionCommand("disable");
-		    pauseButton.setEnabled(true);
-		    
-		  int actionPerformed (ActionEvent e) 
-		  {
-		  
-		        if ("disable".equals(e.getActionCommand())) {
-		          
-		            pauseButton.setEnabled(false);
-		            button.setEnabled(true);
-		        } else {
-		           
-		           pauseButton.setEnabled(true);
-		           button.setEnabled(false);
-		        }
-		        
-		    }
+		
+		
 		  
 		
 		
 		
 		        
-		// now throwing exception
-		try {
-			URL link = new URL(website);
-			HttpURLConnection con = (HttpURLConnection) link.openConnection();
-			int filesize = con.getContentLength(); // checking download size
-			float tDataRead = 0;
-			java.io.BufferedInputStream takingin = new java.io.BufferedInputStream(con.getInputStream()); //starting download
-			java.io.FileOutputStream place_to_vomit = new java.io.FileOutputStream(itemname);
-			java.io.BufferedOutputStream vomitting_out = new BufferedOutputStream(place_to_vomit,1024);
-			byte[] data = new byte[1024];
-			int i = 0;
-			while((i = takingin.read(data,0,1024)) >= 0){
-				tDataRead = tDataRead +i;
-				vomitting_out.write(data,0,i);
-				float completed = (tDataRead * 100)/filesize;
-				candybar.setValue((int)completed);
-			}
-			vomitting_out.close();
-			takingin.close();
-		}catch (Exception e){
-			javax.swing.JOptionPane.showConfirmDialog((java.awt.Component)null,e.getMessage(), "Download Error",javax.swing.JOptionPane.DEFAULT_OPTION);
-		}
-	}
+		
 
+	@SuppressWarnings("unused")
 	class ButtonListener implements ActionListener {
+		private HttpURLConnection https;
+
+		
 		public void actionPerformed(ActionEvent ae){
-			button.setEnabled(false);
-			cancelButton.setEnabled(true);
-			pauseButton.setEnabled(true);
-			startButton.setEnabled(true);
-			i=0;
+			
+			String command = ae.getActionCommand();
+			
+			if (command.equals("button")){
+			
+			// now throwing exception
+			try {
+				URL link = new URL(website);
+				
+				HttpURLConnection con = (HttpURLConnection) link.openConnection();
+				
+			
+				int filesize = con.getContentLength(); // checking download size
+				float tDataRead = 0;
+				java.io.BufferedInputStream takingin = new java.io.BufferedInputStream(con.getInputStream()); //starting download
+				java.io.FileOutputStream place_to_vomit = new java.io.FileOutputStream(itemname);
+				java.io.BufferedOutputStream vomitting_out = new BufferedOutputStream(place_to_vomit,1024);
+				byte[] data = new byte[1024];
+				int i = 0;
+				while((i = takingin.read(data,0,1024)) >= 0){
+					tDataRead = tDataRead +i;
+					vomitting_out.write(data,0,i);
+					float completed = (tDataRead * 100)/filesize;
+					candybar.setValue((int)completed);
+				}
+				vomitting_out.close();
+				takingin.close();
+			}catch (Exception e){
+				javax.swing.JOptionPane.showConfirmDialog((java.awt.Component)null,e.getMessage(), "Download Error",javax.swing.JOptionPane.DEFAULT_OPTION);
+			}
+		}
+			
 		}
 	}
+}
 }
