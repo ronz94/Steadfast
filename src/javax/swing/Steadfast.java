@@ -9,10 +9,11 @@ import java.net.URL;			// in making a URL object
 
 import javax.activation.CommandInfo;
 
+
 import java.awt.event.*;
 
 
-public class Steadfast extends JFrame {
+public class Steadfast extends JFrame implements ActionListener{
 	
 
 	/**
@@ -23,26 +24,28 @@ public class Steadfast extends JFrame {
 	JLabel label;
 	JProgressBar pb;
 	
-	static JButton button;
 	static JButton cancelButton;
 	static JButton pauseButton;
 	static JButton startButton;
-	
+	static JProgressBar candybar;
 	
 	
 	private static final long serialVersionUID = 1L;
 
 	
 	
-	
-	
-	public static final void main(String[] args) throws Exception {
+	public Steadfast() throws Exception {
 		setDefaultLookAndFeelDecorated(true);
 		
 		
 		final String website = "https://github.com/ronz94/Steadfast/archive/basicgui.zip";
 		final String itemname = "basicgui.zip";
+
+	//	final String website1 = "https://github.com/ronz94/Steadfast/archive/basicgui.zip";
+		//String itemname = "basicgui.zip";
+
 		JFrame dhanja = new JFrame();
+		dhanja.setSize(400,100);
 		dhanja.setTitle("SteadFast Downloader");
 		final JProgressBar candybar = new JProgressBar(0,100);
 		candybar.setSize(70,70);
@@ -50,20 +53,27 @@ public class Steadfast extends JFrame {
 		candybar.setStringPainted(true);
 		
 		//setting the buttons
-		button = new JButton("Start");
+		//button = new JButton("Start");
 		//button.addActionListener(new ButtonListener());
 		cancelButton = new JButton ("Cancel");
 		pauseButton = new JButton("Pause");
-		startButton = new JButton ("Resume");
-		cancelButton.setEnabled(false);
-		pauseButton.setEnabled(false);
-		startButton.setEnabled(false);
+		startButton = new JButton ("Start");
+		cancelButton.setEnabled(true);
+		pauseButton.setEnabled(true);
+		startButton.setEnabled(true);
 		
 		//setting buttons to the frame
-		dhanja.add(cancelButton);
+		dhanja.add(startButton);
 		dhanja.add(pauseButton);
+
         dhanja.add(startButton);		
-		dhanja.add(button);
+		//dhanja.add(button);
+
+		dhanja.add(cancelButton);
+		
+        		
+		
+
 		
 		// setting progress bar to the frame
 		dhanja.add(candybar);
@@ -73,13 +83,36 @@ public class Steadfast extends JFrame {
 		dhanja.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		
-		
-		
+
+		//setting actions to buttons
+/*		 button.setMnemonic(KeyEvent.VK_S);
+		    button.setActionCommand("enable");
+		    button.setEnabled(false);
+		 
+		    pauseButton.setMnemonic(KeyEvent.VK_S);
+		    pauseButton.setActionCommand("disable");
+		    pauseButton.setEnabled(true);
+		    
+		  int actionPerformed (ActionEvent e) 
+		  {
 		  
-		
-		
-		
+		        if ("disable".equals(e.getActionCommand())) {
+		          
+		            pauseButton.setEnabled(false);
+		            button.setEnabled(true);
+		        } else {
+		           
+		           pauseButton.setEnabled(true);
+		           button.setEnabled(false);
+		        }
 		        
+		    }
+>>>>>>> d4b2a888d32eb2f695e77b93bb76c19f7762d2eb
+		  
+	*/	
+		
+		
+		     
 		
 
 	@SuppressWarnings("unused")
@@ -91,7 +124,7 @@ public class Steadfast extends JFrame {
 			
 			String command = ae.getActionCommand();
 			
-			if (command.equals("button")){
+			if (command.equals("startbutton")){
 			
 			// now throwing exception
 			try {
@@ -120,7 +153,32 @@ public class Steadfast extends JFrame {
 			}
 		}
 			
+			if (command.equals("pausebutton")){
+				try { 
+					Thread.sleep(2000); 
+					} catch(InterruptedException e) { 
+					} 
+
+			}
+			
+			if (command.equals("cancelbutton")){
+				System.exit(0);
+			}
+			
 		}
 	}
 }
+
+
+	
+	
+	public static final void main(String[] args) throws Exception {
+		new Steadfast();
+	}
+
+	public void actionPerformed(ActionEvent ae){
+		
+		}
 }
+
+
