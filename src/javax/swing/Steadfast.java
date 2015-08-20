@@ -2,13 +2,9 @@ package javax.swing;
 
 
 import java.awt.FlowLayout;		//For defining the layout
-import java.awt.event.ActionListener;
 import java.io.*;				// input-output operations
 import java.net.HttpURLConnection;	// making a connection
 import java.net.URL;			// in making a URL object
-
-import javax.activation.CommandInfo;
-
 
 import java.awt.event.*;
 
@@ -52,9 +48,7 @@ public class Steadfast extends JFrame implements ActionListener{
 		candybar.setValue(0); //setting initial candybar value to zero
 		candybar.setStringPainted(true);
 		
-		//setting the buttons
-		//button = new JButton("Start");
-		//button.addActionListener(new ButtonListener());
+		
 		cancelButton = new JButton ("Cancel");
 		pauseButton = new JButton("Pause");
 		startButton = new JButton ("Start");
@@ -65,9 +59,8 @@ public class Steadfast extends JFrame implements ActionListener{
 		//setting buttons to the frame
 		dhanja.add(startButton);
 		dhanja.add(pauseButton);
-
-        dhanja.add(startButton);		
-		//dhanja.add(button);
+	
+		
 
 		dhanja.add(cancelButton);
 		
@@ -84,34 +77,6 @@ public class Steadfast extends JFrame implements ActionListener{
 		
 		
 
-		//setting actions to buttons
-/*		 button.setMnemonic(KeyEvent.VK_S);
-		    button.setActionCommand("enable");
-		    button.setEnabled(false);
-		 
-		    pauseButton.setMnemonic(KeyEvent.VK_S);
-		    pauseButton.setActionCommand("disable");
-		    pauseButton.setEnabled(true);
-		    
-		  int actionPerformed (ActionEvent e) 
-		  {
-		  
-		        if ("disable".equals(e.getActionCommand())) {
-		          
-		            pauseButton.setEnabled(false);
-		            button.setEnabled(true);
-		        } else {
-		           
-		           pauseButton.setEnabled(true);
-		           button.setEnabled(false);
-		        }
-		        
-		    }
->>>>>>> d4b2a888d32eb2f695e77b93bb76c19f7762d2eb
-		  
-	*/	
-		
-		
 		     
 		
 
@@ -176,9 +141,21 @@ public class Steadfast extends JFrame implements ActionListener{
 		new Steadfast();
 	}
 
-	public void actionPerformed(ActionEvent ae){
+
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
 		
-		}
+	}
+
+
+
+
+	
+
+	
 }
 
 
