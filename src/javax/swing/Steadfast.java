@@ -29,8 +29,9 @@ public class Steadfast extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 1L;
 
 	
+
 	
-	public Steadfast() throws Exception {
+	public Steadfast()  throws Exception  {
 		setDefaultLookAndFeelDecorated(true);
 		
 		
@@ -49,6 +50,7 @@ public class Steadfast extends JFrame implements ActionListener{
 		candybar.setStringPainted(true);
 		
 		
+		
 		cancelButton = new JButton ("Cancel");
 		pauseButton = new JButton("Pause");
 		startButton = new JButton ("Start");
@@ -64,9 +66,12 @@ public class Steadfast extends JFrame implements ActionListener{
 
 		dhanja.add(cancelButton);
 		
-        		
-		
+		//setting textfield to the frame
+		JLabel  namelabel= new JLabel("URL: ", JLabel.RIGHT);
+		final JTextField URLText = new JTextField(10);
+	    dhanja.add(URLText);
 
+	 
 		
 		// setting progress bar to the frame
 		dhanja.add(candybar);
@@ -75,7 +80,7 @@ public class Steadfast extends JFrame implements ActionListener{
 		dhanja.setSize(300,150);
 		dhanja.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		
+	   
 
 		     
 		
@@ -137,8 +142,21 @@ public class Steadfast extends JFrame implements ActionListener{
 
 	
 	
+	
+	
+	//private static void showtextfield() {
+		// TODO Auto-generated method stub
+		
+	//}
+
+
+
+
+
 	public static final void main(String[] args) throws Exception {
 		new Steadfast();
+		
+	
 	}
 
 
