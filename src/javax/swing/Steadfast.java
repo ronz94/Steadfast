@@ -94,7 +94,7 @@ public class Steadfast extends JFrame implements ActionListener{
 			
 			String command = ae.getActionCommand();
 			
-			if (command.equals("startbutton")){
+			if (command.equals("Start")){
 			
 			// now throwing exception
 			try {
@@ -123,7 +123,7 @@ public class Steadfast extends JFrame implements ActionListener{
 			}
 		}
 			
-			if (command.equals("pausebutton")){
+			if (command.equals("Pause")){
 				try { 
 					Thread.sleep(2000); 
 					} catch(InterruptedException e) { 
@@ -131,7 +131,7 @@ public class Steadfast extends JFrame implements ActionListener{
 
 			}
 			
-			if (command.equals("cancelbutton")){
+			if (command.equals("Cancel")){
 				System.exit(0);
 			}
 			
