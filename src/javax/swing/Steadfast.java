@@ -24,6 +24,7 @@ public class Steadfast extends JFrame implements ActionListener{
 	static JProgressBar candybar;
 	
 	
+	
 	private static final long serialVersionUID = 1L;
 
 	
@@ -40,7 +41,7 @@ public class Steadfast extends JFrame implements ActionListener{
 		dhanja.setSize(400,100);
 		dhanja.setTitle("SteadFast Downloader");
 		final JProgressBar candybar = new JProgressBar(0,100);
-		candybar.setSize(70,70);
+	    candybar.setSize(70,70);
 		candybar.setValue(0); //setting initial candybar value to zero
 		candybar.setStringPainted(true);
 		
@@ -114,6 +115,7 @@ public class Steadfast extends JFrame implements ActionListener{
 				tDataRead = tDataRead +i;
 				vomitting_out.write(data,0,i);
 				float completed = (tDataRead * 100)/filesize;
+				final JProgressBar candybar = new JProgressBar(0,100);
 				candybar.setValue((int)completed);
 			}
 			vomitting_out.close();
