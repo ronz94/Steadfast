@@ -17,14 +17,12 @@ public class Steadfast extends JFrame implements ActionListener{
 	 */
 	final int interval = 100;
 	
-	
-	static JButton cancelButton;
-	static JButton pauseButton;
-	static JButton startButton;
-	static JProgressBar candybar;
-	
-	
-	
+	static final JFrame dhanja = new JFrame();
+	static final JButton cancelButton = new JButton ("Cancel");
+	static final JButton pauseButton = new JButton("Pause");
+	static final JButton startButton = new JButton ("Start");
+	static final JProgressBar candybar = new JProgressBar(0,100);
+	static final JTextField URLText = new JTextField(10);
 	private static final long serialVersionUID = 1L;
 
 	
@@ -37,19 +35,15 @@ public class Steadfast extends JFrame implements ActionListener{
 		
 		
 
-		JFrame dhanja = new JFrame();
+		
 		dhanja.setSize(400,100);
 		dhanja.setTitle("SteadFast Downloader");
-		final JProgressBar candybar = new JProgressBar(0,100);
+		//final JProgressBar candybar = new JProgressBar(0,100);
 	    candybar.setSize(70,70);
 		candybar.setValue(0); //setting initial candybar value to zero
 		candybar.setStringPainted(true);
 		
 		
-		
-		cancelButton = new JButton ("Cancel");
-		pauseButton = new JButton("Pause");
-		startButton = new JButton ("Start");
 		cancelButton.addActionListener(this);
 		pauseButton.addActionListener(this);
 		startButton.addActionListener(this);
@@ -58,18 +52,7 @@ public class Steadfast extends JFrame implements ActionListener{
 		startButton.setEnabled(true);
 		
 		//setting buttons to the frame
-		dhanja.add(startButton);
-		dhanja.add(pauseButton);
-	
-		
-
-		dhanja.add(cancelButton);
-		
-		final JTextField URLText = new JTextField(10);
-	    dhanja.add(URLText);
-
-	 
-		
+		dhanja.add(URLText);
 		// setting progress bar to the frame
 		dhanja.add(candybar);
 		dhanja.setVisible(true);
@@ -77,6 +60,9 @@ public class Steadfast extends JFrame implements ActionListener{
 		dhanja.setSize(300,150);
 		dhanja.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
+		dhanja.add(startButton);
+		dhanja.add(pauseButton);
+		dhanja.add(cancelButton);
 	   
 	}
 
@@ -86,7 +72,7 @@ public class Steadfast extends JFrame implements ActionListener{
 	}
 	
 	@Override
-	public void actionPerformed(ActionEvent ae) {
+	public void actionPerformed(ActionEvent ae ) {
 		// TODO Auto-generated method stub
 		
 		String command = ae.getActionCommand();
@@ -110,7 +96,6 @@ public class Steadfast extends JFrame implements ActionListener{
 					tDataRead = tDataRead +i;
 					vomitting_out.write(data,0,i);
 					float completed = (tDataRead * 100)/filesize;
-					final JProgressBar candybar = new JProgressBar(0,100);
 					candybar.setValue((int)completed);
 				}
 				vomitting_out.close();
@@ -135,6 +120,7 @@ public class Steadfast extends JFrame implements ActionListener{
 		}
 		
 	}
+
 	
 }
 
