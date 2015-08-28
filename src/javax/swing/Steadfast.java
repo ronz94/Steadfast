@@ -15,10 +15,8 @@ public class Steadfast extends JFrame implements ActionListener{
 	/**
 	 * 
 	 */
-	final static int interval = 100;
-	int i;
-	JLabel label;
-	JProgressBar pb;
+	final int interval = 100;
+	
 	
 	static JButton cancelButton;
 	static JButton pauseButton;
@@ -66,8 +64,6 @@ public class Steadfast extends JFrame implements ActionListener{
 
 		dhanja.add(cancelButton);
 		
-		//setting textfield to the frame
-		JLabel  namelabel= new JLabel("URL: ", JLabel.RIGHT);
 		final JTextField URLText = new JTextField(10);
 	    dhanja.add(URLText);
 
@@ -94,7 +90,7 @@ public class Steadfast extends JFrame implements ActionListener{
 			
 			String command = ae.getActionCommand();
 			
-			if (command.equals("startbutton")){
+			if (command.equals("start")){
 			
 			// now throwing exception
 			try {
@@ -123,7 +119,7 @@ public class Steadfast extends JFrame implements ActionListener{
 			}
 		}
 			
-			if (command.equals("pausebutton")){
+			if (command.equals("pause")){
 				try { 
 					Thread.sleep(2000); 
 					} catch(InterruptedException e) { 
@@ -131,7 +127,7 @@ public class Steadfast extends JFrame implements ActionListener{
 
 			}
 			
-			if (command.equals("cancelbutton")){
+			if (command.equals("cancel")){
 				System.exit(0);
 			}
 			
@@ -144,11 +140,7 @@ public class Steadfast extends JFrame implements ActionListener{
 	
 	
 	
-	//private static void showtextfield() {
-		// TODO Auto-generated method stub
-		
-	//}
-
+	
 
 
 
