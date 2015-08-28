@@ -54,6 +54,9 @@ public class Steadfast extends JFrame implements ActionListener{
 		cancelButton = new JButton ("Cancel");
 		pauseButton = new JButton("Pause");
 		startButton = new JButton ("Start");
+		cancelButton.addActionListener(this);
+		pauseButton.addActionListener(this);
+		startButton.addActionListener(this);
 		cancelButton.setEnabled(true);
 		pauseButton.setEnabled(true);
 		startButton.setEnabled(true);
