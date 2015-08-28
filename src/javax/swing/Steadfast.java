@@ -31,12 +31,12 @@ public class Steadfast extends JFrame implements ActionListener{
 	
 
 	
+	
 	public Steadfast()  throws Exception  {
 		setDefaultLookAndFeelDecorated(true);
 		
 		
-		final String website = "https://github.com/ronz94/Steadfast/archive/basicgui.zip";
-		final String itemname = "basicgui.zip";
+		
 
 	//	final String website1 = "https://github.com/ronz94/Steadfast/archive/basicgui.zip";
 		//String itemname = "basicgui.zip";
@@ -83,60 +83,17 @@ public class Steadfast extends JFrame implements ActionListener{
 	   
 
 		     
-		
-
+// no class under a class		
+/*
 	@SuppressWarnings("unused")
 	class ButtonListener implements ActionListener {
 		private HttpURLConnection https;
 
 		
 		public void actionPerformed(ActionEvent ae){
-			
-			String command = ae.getActionCommand();
-			
-			if (command.equals("Start")){
-			
-			// now throwing exception
-			try {
-				URL link = new URL(website);
-				
-				HttpURLConnection con = (HttpURLConnection) link.openConnection();
-				
-			
-				int filesize = con.getContentLength(); // checking download size
-				float tDataRead = 0;
-				java.io.BufferedInputStream takingin = new java.io.BufferedInputStream(con.getInputStream()); //starting download
-				java.io.FileOutputStream place_to_vomit = new java.io.FileOutputStream(itemname);
-				java.io.BufferedOutputStream vomitting_out = new BufferedOutputStream(place_to_vomit,1024);
-				byte[] data = new byte[1024];
-				int i = 0;
-				while((i = takingin.read(data,0,1024)) >= 0){
-					tDataRead = tDataRead +i;
-					vomitting_out.write(data,0,i);
-					float completed = (tDataRead * 100)/filesize;
-					candybar.setValue((int)completed);
 				}
-				vomitting_out.close();
-				takingin.close();
-			}catch (Exception e){
-				javax.swing.JOptionPane.showConfirmDialog((java.awt.Component)null,e.getMessage(), "Download Error",javax.swing.JOptionPane.DEFAULT_OPTION);
-			}
-		}
-			
-			if (command.equals("Pause")){
-				try { 
-					Thread.sleep(2000); 
-					} catch(InterruptedException e) { 
-					} 
-
-			}
-			
-			if (command.equals("Cancel")){
-				System.exit(0);
-			}
-			
-		}
 	}
+	*/
 }
 
 
@@ -163,9 +120,52 @@ public class Steadfast extends JFrame implements ActionListener{
 
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent ae) {
 		// TODO Auto-generated method stub
 		
+		String command = ae.getActionCommand();
+		
+		if (command.equals("Start")){
+		
+		// now throwing exception
+		try {
+			final String website = "https://github.com/ronz94/Steadfast/archive/basicgui.zip";
+			final String itemname = "basicgui.zip";
+			URL link = new URL(website);
+			HttpURLConnection con = (HttpURLConnection) link.openConnection();
+			int filesize = con.getContentLength(); // checking download size
+			float tDataRead = 0;
+			java.io.BufferedInputStream takingin = new java.io.BufferedInputStream(con.getInputStream()); //starting download
+			java.io.FileOutputStream place_to_vomit = new java.io.FileOutputStream(itemname);
+			java.io.BufferedOutputStream vomitting_out = new BufferedOutputStream(place_to_vomit,1024);
+			byte[] data = new byte[1024];
+			int i = 0;
+			while((i = takingin.read(data,0,1024)) >= 0){
+				tDataRead = tDataRead +i;
+				vomitting_out.write(data,0,i);
+				float completed = (tDataRead * 100)/filesize;
+				candybar.setValue((int)completed);
+			}
+			vomitting_out.close();
+			takingin.close();
+		}catch (Exception e){
+			javax.swing.JOptionPane.showConfirmDialog((java.awt.Component)null,e.getMessage(), "Download Error",javax.swing.JOptionPane.DEFAULT_OPTION);
+		}
+	}
+		
+		if (command.equals("Pause")){
+			try { 
+				Thread.sleep(2000); 
+				} catch(InterruptedException e) { 
+				} 
+
+		}
+		
+		if (command.equals("Cancel")){
+			System.exit(0);
+		}
+		
+
 	}
 
 
