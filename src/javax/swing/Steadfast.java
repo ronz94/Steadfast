@@ -119,9 +119,18 @@ public class Steadfast extends JFrame implements ActionListener{
 			vomitting_out.close();
 			takingin.close();
 		}catch (Exception e){
+			
 			javax.swing.JOptionPane.showConfirmDialog((java.awt.Component)null,e.getMessage(), "Download Error",javax.swing.JOptionPane.DEFAULT_OPTION);
+			
+			
+			throw new Error("ERROR");
 		}
-	}
+			catch (Error er){
+				
+				
+			}
+		}
+	
 		
 		if (command.equals("Pause")){
 			try { 
