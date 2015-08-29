@@ -24,24 +24,28 @@ public class Steadfast extends JFrame implements ActionListener{
 	static final JProgressBar candybar = new JProgressBar(0,100);
 	static final JTextField URLText = new JTextField(10);
 	static final JTextField filename = new JTextField(10);
+	static final JPanel progress_holder = new JPanel();
 	private static final long serialVersionUID = 1L;
 
 	String content = URLText.getText();
 	String name = filename.getText();
 
-	
-	
 	public Steadfast()  throws Exception  {
 		setDefaultLookAndFeelDecorated(true);
 		
-		
-		
-
-		
-		dhanja.setSize(400,100);
+		dhanja.setLayout(new FlowLayout());
+		dhanja.setSize(300,250);
 		dhanja.setTitle("SteadFast Downloader");
+		dhanja.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		JPanel holder = new JPanel();
+		JPanel holder2 = new JPanel();
+		JPanel holder3 = new JPanel();
+		JPanel holder4 = new JPanel();
+		JPanel holder5 = new JPanel();
+		JLabel urlinfo = new JLabel("-:Enter your URL here:-");
+		JLabel fileinfo = new JLabel("-:Enter your filename here:-");
 		//final JProgressBar candybar = new JProgressBar(0,100);
-	    candybar.setSize(70,70);
+	    candybar.setSize(90,70);
 		candybar.setValue(0); //setting initial candybar value to zero
 		candybar.setStringPainted(true);
 		
@@ -53,20 +57,23 @@ public class Steadfast extends JFrame implements ActionListener{
 		pauseButton.setEnabled(true);
 		startButton.setEnabled(true);
 		
-		//setting text fields to the frame
-		dhanja.add(URLText);
-		dhanja.add(filename);
-		// setting progress bar to the frame
-		dhanja.add(candybar);
+		dhanja.add(holder);
+		holder.add(urlinfo);
+		dhanja.add(holder2);
+		holder2.add(URLText);
+		dhanja.add(holder3);
+		holder3.add(fileinfo);
+		dhanja.add(holder4);
+		holder4.add(filename);
+		
+		dhanja.add(progress_holder);
+		progress_holder.add(candybar);
+		
+		dhanja.add(holder5);
+		holder5.add(startButton);
+		holder5.add(pauseButton);
+		holder5.add(cancelButton);
 		dhanja.setVisible(true);
-		dhanja.setLayout(new FlowLayout());
-		dhanja.setSize(300,150);
-		dhanja.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		//setting buttons to the frame
-		dhanja.add(startButton);
-		dhanja.add(pauseButton);
-		dhanja.add(cancelButton);
-	   
 	}
 
 
