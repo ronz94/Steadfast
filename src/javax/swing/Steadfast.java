@@ -23,9 +23,11 @@ public class Steadfast extends JFrame implements ActionListener{
 	static final JButton startButton = new JButton ("Start");
 	static final JProgressBar candybar = new JProgressBar(0,100);
 	static final JTextField URLText = new JTextField(10);
+	static final JTextField filename = new JTextField(10);
 	private static final long serialVersionUID = 1L;
 
-	
+	String content = URLText.getText();
+	String name = filename.getText();
 
 	
 	
@@ -51,15 +53,16 @@ public class Steadfast extends JFrame implements ActionListener{
 		pauseButton.setEnabled(true);
 		startButton.setEnabled(true);
 		
-		//setting buttons to the frame
+		//setting text fields to the frame
 		dhanja.add(URLText);
+		dhanja.add(filename);
 		// setting progress bar to the frame
 		dhanja.add(candybar);
 		dhanja.setVisible(true);
 		dhanja.setLayout(new FlowLayout());
 		dhanja.setSize(300,150);
 		dhanja.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
+		//setting buttons to the frame
 		dhanja.add(startButton);
 		dhanja.add(pauseButton);
 		dhanja.add(cancelButton);
@@ -81,8 +84,8 @@ public class Steadfast extends JFrame implements ActionListener{
 		
 		// now throwing exception
 			try {
-				final String website = "https://github.com/ronz94/Steadfast/archive/basicgui.zip";
-				final String itemname = "basicgui.zip";
+				final String website = URLText.getText();
+				final String itemname = filename.getText();
 				URL link = new URL(website);
 				HttpURLConnection con = (HttpURLConnection) link.openConnection();
 				int filesize = con.getContentLength(); // checking download size
