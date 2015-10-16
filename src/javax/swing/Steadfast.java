@@ -81,7 +81,7 @@ public class Steadfast extends JFrame implements ActionListener{
 		new Steadfast();
 	}
 	
-	@Override
+	class action extends Thread{
 	public void actionPerformed(ActionEvent ae ) {
 		// TODO Auto-generated method stub
 		
@@ -131,7 +131,13 @@ public class Steadfast extends JFrame implements ActionListener{
 		
 	}
 
-	
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 }
 
 
