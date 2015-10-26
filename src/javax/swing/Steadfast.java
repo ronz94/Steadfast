@@ -78,7 +78,8 @@ public  class Steadfast extends JFrame implements ActionListener{
 
 
 	public static final void main(String[] args) throws Exception {
-		new Steadfast();
+		Steadfast a = new Steadfast();
+		(a.new action()).start();
 	}
 	
 	public class action extends Thread {
