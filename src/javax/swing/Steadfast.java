@@ -9,6 +9,10 @@ import java.net.URL;			// in making a URL object
 import java.awt.event.*;
 
 
+class gui extends Thread{
+	public void run(){
+		
+	
 public class Steadfast extends JFrame implements ActionListener{
 	
 
@@ -75,14 +79,15 @@ public class Steadfast extends JFrame implements ActionListener{
 		holder5.add(cancelButton);
 		dhanja.setVisible(true);
 	}
+}
 
 
-	public static final void main(String[] args) throws Exception {
-		new Steadfast();
-	}
 	
-	@Override
-	public void actionPerformed(ActionEvent ae ) {
+	
+	class action extends Thread{
+		public void run(){
+	
+	public void actionPerformed(ActionEvent ae) {
 		// TODO Auto-generated method stub
 		
 		String command = ae.getActionCommand();
@@ -130,8 +135,19 @@ public class Steadfast extends JFrame implements ActionListener{
 		}
 		
 	}
-
 	
-}
+	public static final void main(String[] args) throws Exception {
+		new Steadfast();
+		gui g1= new gui();
+		g1.start();
+		action a1= new action();
+		a1.start();
+	}
+		}
+		}
 
+	}	
+}
+	
+	
 
